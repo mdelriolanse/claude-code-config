@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(python -m pytest:*)",
+      "Bash(ruff check:*)",
+      "Bash(source .venv/bin/activate)",
+      "Bash(python:*)",
+      "Bash(pytest:*)",
+      "Bash(pip install:*)",
+      "Bash(uv pip install:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat\\(server\\): add gRPC server with TensorInferenceServicer\n\nImplement gRPC server to enable client-server communication:\n\n- Add TensorInferenceServicer class implementing the Infer RPC\n  - Decrypts cloaked embeddings, runs transformer inference, encrypts output\n  - Handles KV cache loading/saving per session\n  - Graceful error handling with proper gRPC status codes\n\n- Add serve_grpc\\(\\) function for standalone server mode\n  - Pre-loads model before accepting connections\n  - Configurable port and worker threads\n  - 100MB message limits for large tensors\n  - Signal handlers for graceful shutdown \\(SIGTERM, SIGINT\\)\n\n- Update CLI to support both gRPC and RunPod modes\n  - `--mode grpc` for standalone server \\(default\\)\n  - `--mode runpod` for serverless deployment\n\n- Clean up forward_transformer\\(\\)\n  - Remove debug print statements\n  - Replace with proper logging module usage\n\n- Fix import path in tensor_service_pb2_grpc.py for package compatibility\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}
