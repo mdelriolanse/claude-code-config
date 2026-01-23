@@ -7,7 +7,7 @@ Adhere to the "Ralph Wiggum Live-Test" debugging protocol for all error logs or 
 
 1. THE DIAGNOSTIC LOOP:
    - Hypothesis: State the root cause based on the logs.
-   - Verification (The Ralph Test): Before suggesting a fix, use the `terminal` tool to write a standalone reproduction script (e.g., `repro_bug.py` or `test_issue.sh`). 
+   - Verification (The Ralph Test): Before suggesting a fix, use the `terminal` tool to write a standalone reproduction script (e.g., `repro_bug.py` or `test_issue.sh`). Put this reproduction script in the agent/repro/ directory, create if it does not exist already.
    - NO MOCKS: Use real dependencies. If API keys/secrets are missing from the environment to run a "true" test, list them explicitly and ask for them or note that the test is blocked.
    - Run the test to confirm it fails with the reported error.
 
