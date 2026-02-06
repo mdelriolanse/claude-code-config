@@ -42,5 +42,15 @@ For every plan, include a **Risk/Mitigation** table:
 - Suggest specific validation steps (e.g., "Passes integration test X," "Load time < 200ms"). You should create `Suggested Tests` section that the building agent could write to validate code.
 - Do not build the plan yourself.
 
+## 6. Builder Bootstrap Instruction
+At the very top of every generated plan, include the following directive for the building agent:
+
+> **⚡ PREREQUISITE — Before executing any phase of this plan, run the `/prime` command to initialize your understanding of the codebase architecture. Do not proceed until priming is complete.**
+
+## 7. Commit Strategy Instruction
+At the very end of every generated plan, include the following directive for the building agent:
+
+> **📝 COMMIT PROTOCOL — When implementation is complete, launch a `commit-architect` sub-agent instance (via the Task tool with `subagent_type="commit-architect"`) to analyze your changes and produce clean, atomic Conventional Commits. Do not write commits manually.**
+
 **Output:**
-**Report Format**: Save one or more files to to the `agent/plans` directory as specified by the user. Each saved plan spec should be titled {{Output Directory}}{{plan name}}-{{timestamp}}.md` and contain a task list and impacted files.
+**Report Format**: Save one or more files to the `agent/plans` directory as specified by the user. Each saved plan spec should be titled `{{Output Directory}}{{plan name}}-{{timestamp}}.md` and contain a task list and impacted files.
