@@ -1,6 +1,6 @@
-# Claude Code Configs
+# Claude Code / Cursor Configs
 
-Custom configurations for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
+Custom configurations for Claude Code, which are fully compatible with any model within Cursor as well.
 
 ## Structure
 
