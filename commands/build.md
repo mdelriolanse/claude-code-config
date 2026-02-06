@@ -1,6 +1,6 @@
 ---
 description: Build a specific feature or component.
-argument-hint: [feature_description]
+argument-hint: [--branch <name>] [--worktree <path>] <feature_description>
 allowed-tools: [Bash, Read, Edit]
 ---
 
@@ -11,7 +11,21 @@ Execute a specific build task by translating requirements into functional code.
 - **Requirement**: $ARGUMENTS
 - **Global Rules**: @CLAUDE.md
 
+**Optional Flags (parsed from $ARGUMENTS):**
+- `--branch <name>` — Create and check out a new git branch with the given name before starting work.
+- `--worktree <path>` — Create a new git worktree at the given path (implies `--branch` if also provided; the worktree will use that branch). All subsequent work is performed inside the worktree directory.
+
+> If **neither** flag is supplied, work directly on the current branch in the current working directory — do **not** create a branch or worktree.
+
 **Workflow:**
+
+0. **Parse Flags**: Extract `--branch` and `--worktree` values from $ARGUMENTS. Everything remaining after flag extraction is the feature description.
+   * If `--worktree <path>` is provided:
+     - Run `git worktree add <path> -b <branch>` (use the `--branch` value if given, otherwise derive a branch name from the feature description in kebab-case).
+     - `cd` into the worktree path for all subsequent steps.
+   * Else if `--branch <name>` is provided (without `--worktree`):
+     - Run `git checkout -b <name>` to create and switch to the new branch.
+   * If neither flag is provided, skip this step entirely.
 1. **Read Step**: Locate relevant existing components or types that must be integrated.
 2. **Implementation**:
    * Draft new logic following established patterns in @CLAUDE.md.
@@ -21,4 +35,4 @@ Execute a specific build task by translating requirements into functional code.
    * **Important**: If the build fails, analyze the error and perform one iterative fix.
 
 **Output:**
-**Report**: List all created/modified files and a summary of the implementation logic.
+**Report**: List all created/modified files, the branch/worktree used (if any), and a summary of the implementation logic.
