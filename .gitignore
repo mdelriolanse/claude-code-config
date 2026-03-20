@@ -1,0 +1,28 @@
+# Runtime & session data
+history.jsonl
+sessions/
+projects/
+cache/
+paste-cache/
+shell-snapshots/
+debug/
+file-history/
+backups/
+tasks/
+todos/
+plans/
+
+# MCP runtime caches
+mcp-needs-auth-cache.json
+
+# Agent runtime memory (project-specific, not global config)
+agent-memory/
+
+# Credentials & secrets
+.credentials.json
+
+# NFS lock files
+.nfs*
+
+# Plugin downloads (large, fetched on demand)
+plugins/

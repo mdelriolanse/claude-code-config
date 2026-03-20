@@ -1,0 +1,49 @@
+{
+  "_note": "Optional MCP integrations. To activate, move entries into .mcp.json mcpServers and set the required environment variables.",
+  "mcpServers": {
+    "sentry": {
+      "_used_by": ["hotfix", "self-healing-ci"],
+      "_purpose": "Pull full error context, breadcrumbs, affected users, and release info from Sentry events",
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@sentry/mcp-server"],
+      "env": {
+        "SENTRY_AUTH_TOKEN": "${SENTRY_AUTH_TOKEN}",
+        "SENTRY_ORG": "${SENTRY_ORG}"
+      }
+    },
+    "linear": {
+      "_used_by": ["hotfix", "pr-review", "self-healing-ci"],
+      "_purpose": "Auto-update incident tickets and link PRs to Linear issues",
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@linear/mcp-server"],
+      "env": {
+        "LINEAR_API_KEY": "${LINEAR_API_KEY}"
+      }
+    },
+    "datadog": {
+      "_used_by": ["perf-regression"],
+      "_purpose": "Pull production metrics as context before optimization and post benchmark results",
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@datadog/mcp-server"],
+      "env": {
+        "DD_API_KEY": "${DD_API_KEY}",
+        "DD_APP_KEY": "${DD_APP_KEY}",
+        "DD_SITE": "${DD_SITE}"
+      }
+    },
+    "slack": {
+      "_used_by": ["perf-regression", "self-healing-ci"],
+      "_purpose": "Notify the team of regressions, improvements, or CI escalations",
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-slack"],
+      "env": {
+        "SLACK_BOT_TOKEN": "${SLACK_BOT_TOKEN}",
+        "SLACK_TEAM_ID": "${SLACK_TEAM_ID}"
+      }
+    }
+  }
+}
