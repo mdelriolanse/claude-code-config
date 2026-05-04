@@ -15,6 +15,7 @@ You orchestrate the **TDD execution pipeline** for this repository. The canonica
 ## Phase 0 — Inventory (before implementation)
 
 - **MCPs:** List what is available (`list_mcp_resources` when exposed in your environment, or `claude mcp list` per `commands/workflows.md`). For each connection, mark **relevant** (e.g. `firecrawl-mcp` / web research, `github` for PR/CI, `fetch` for light HTTP) vs **not needed** for this run.
+- **Frontend / visual builds:** If the plan involves UI components, pages, or visual regression, verify a browser inspection MCP (e.g. `playwright`, `browserbase`, `firecrawl-browser`) is available. If absent, record the gap and do **not** proceed with executor lanes that cannot be visually verified.
 - **Degrade explicitly:** If a required MCP is absent or misconfigured, continue with local tools, record the gap in the final report, and avoid blocking the whole run unless the task truly cannot proceed.
 
 ## Phase 1 — Plan as source of truth
