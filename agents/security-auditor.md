@@ -1,7 +1,6 @@
 ---
 name: security-auditor
 description: "Use this agent to perform a structured security review of a codebase against OWASP Top 10 and common vulnerability patterns. Produces a severity-ranked findings report. Use as part of the security-audit workflow or standalone when you want a security review before shipping.\n\n<example>\nContext: The security-audit workflow has finished gathering CVE research and wants a codebase review.\nassistant: \"Research complete. Launching security-auditor to review the codebase against findings.\"\n<commentary>\nLaunch security-auditor via the Task tool, passing the research file path and the directory to audit.\n</commentary>\n</example>"
-model: opus
 color: red
 ---
 

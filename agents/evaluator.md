@@ -1,7 +1,6 @@
 ---
 name: evaluator
 description: "Use this agent to compare multiple implementations, prototypes, or results against a rubric and produce a ranked recommendation. Use after parallel execution workflows (impl-race, frontend-race, scaffold-race, tech-spike) to select the best outcome.\n\n<example>\nContext: A frontend-race has completed with 3 implementations on different worktrees.\nassistant: \"All executors have finished. Launching evaluator to compare implementations and recommend the best one.\"\n<commentary>\nLaunch evaluator via the Task tool, passing the worktree paths, ports, and the evaluation criteria from the original plan.\n</commentary>\n</example>"
-model: opus
 color: yellow
 ---
 

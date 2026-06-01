@@ -1,7 +1,6 @@
 ---
 name: coverage-analyzer
 description: "Use this agent to analyze test coverage gaps in a codebase, identify the highest-risk uncovered code paths, and produce a prioritized report of what needs testing. Use as the first step in the coverage-gaps workflow or standalone before a major release.\n\n<example>\nContext: The coverage-gaps workflow is starting.\nassistant: \"Launching coverage-analyzer to identify untested code paths.\"\n<commentary>\nLaunch coverage-analyzer via the Task tool, passing the target directory.\n</commentary>\n</example>"
-model: sonnet
 color: cyan
 ---
 

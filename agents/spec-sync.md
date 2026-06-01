@@ -2,7 +2,6 @@
 name: spec-sync
 description: Documentation synchronization specialist. Use proactively when the codebase has changed and documentation needs updating, or when asked to verify that README/specification matches the actual implementation.
 tools: Read, Glob, Grep
-model: sonnet
 color: cyan
 ---
 

@@ -2,7 +2,6 @@
 name: researcher
 description: Research specialist agent for web scraping and information gathering. Use proactively when you need to research a topic by scraping websites, either those discovered through search or URLs provided by the user. The agent systematically collects information, synthesizes findings, and saves comprehensive research reports.
 tools: Write, Read, WebSearch, mcp__firecrawl-mcp__firecrawl_scrape, mcp__firecrawl-mcp__firecrawl_search, mcp__playwright__navigate
-model: sonnet
 color: purple
 ---
 

@@ -1,7 +1,6 @@
 ---
 name: data-analyzer
 description: "Use this agent when you need to analyze and generate comprehensive reports from data files such as CSV, pickle, or other structured data formats. Examples include: analyzing sales data from a CSV file, examining model outputs stored in pickle files, creating data summaries for stakeholder reports, or performing exploratory data analysis on new datasets. The agent accepts format arguments (like 'md' for markdown or 'csv' for pandas DataFrame) and length arguments ('short', 'medium', 'long') to customize the output."
-model: sonnet
 color: yellow
 memory: project
 ---

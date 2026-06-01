@@ -1,7 +1,6 @@
 ---
 name: merge-orchestrator
 description: "Use this agent as the final step in any parallel execution workflow where multiple ralph-executor agents have worked on separate worktrees/branches. It merges all branches back to main in dependency order, resolves conflicts, and cleans up worktrees.\n\n<example>\nContext: A tdd-pipeline has completed with 3 parallel executors on separate worktrees.\nassistant: \"All executors have finished. Launching merge-orchestrator to consolidate branches to main.\"\n<commentary>\nLaunch merge-orchestrator via the Task tool, passing the list of worktree paths and their branch names.\n</commentary>\n</example>"
-model: opus
 color: blue
 ---
 

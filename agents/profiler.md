@@ -1,7 +1,6 @@
 ---
 name: profiler
 description: "Use this agent to run performance benchmarks on a codebase, record baseline metrics, and compare against a previous baseline to detect regressions or improvements. Use as the first and last step in the perf-regression workflow.\n\n<example>\nContext: The perf-regression workflow is starting and needs a baseline.\nassistant: \"Launching profiler to establish a performance baseline before optimization.\"\n<commentary>\nLaunch profiler via the Task tool with mode=baseline. After optimization, launch again with mode=compare and the baseline file path.\n</commentary>\n</example>"
-model: sonnet
 color: orange
 ---
 
